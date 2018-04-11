@@ -1,0 +1,247 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.*?>
+<?import javafx.embed.swing.*?>
+<?import java.lang.*?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<AnchorPane id="AnchorPane" fx:id="content" prefHeight="551.0" prefWidth="721.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="opisiame.controller.gestion_quiz.Edit_questionController">
+   <children>
+      <GridPane layoutX="121.0" layoutY="110.0" minHeight="-Infinity" minWidth="-Infinity" prefHeight="500.0" prefWidth="700.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+        <columnConstraints>
+            <ColumnConstraints hgrow="NEVER" maxWidth="-Infinity" minWidth="15.0" prefWidth="15.0" />
+            <ColumnConstraints halignment="CENTER" hgrow="ALWAYS" maxWidth="1.7976931348623157E308" minWidth="10.0" prefWidth="100.0" />
+            <ColumnConstraints halignment="CENTER" hgrow="ALWAYS" maxWidth="1.7976931348623157E308" minWidth="10.0" prefWidth="100.0" />
+            <ColumnConstraints hgrow="NEVER" maxWidth="1.7976931348623157E308" minWidth="10.0" prefWidth="31.0" />
+            <ColumnConstraints halignment="CENTER" hgrow="ALWAYS" maxWidth="1.7976931348623157E308" minWidth="10.0" prefWidth="171.0" />
+            <ColumnConstraints halignment="CENTER" hgrow="NEVER" maxWidth="1.7976931348623157E308" minWidth="8.0" prefWidth="10.0" />
+          <ColumnConstraints halignment="CENTER" hgrow="ALWAYS" maxWidth="1.7976931348623157E308" minWidth="10.0" prefWidth="165.0" />
+            <ColumnConstraints hgrow="NEVER" maxWidth="-Infinity" minWidth="15.0" prefWidth="15.0" />
+            <ColumnConstraints />
+        </columnConstraints>
+        <rowConstraints>
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints maxHeight="20.0" minHeight="10.0" prefHeight="15.0" vgrow="SOMETIMES" />
+            <RowConstraints maxHeight="34.0" minHeight="10.0" prefHeight="31.0" valignment="CENTER" vgrow="SOMETIMES" />
+            <RowConstraints maxHeight="180.0" minHeight="10.0" prefHeight="126.0" valignment="CENTER" vgrow="ALWAYS" />
+            <RowConstraints maxHeight="43.0" minHeight="5.0" prefHeight="15.0" vgrow="SOMETIMES" />
+            <RowConstraints maxHeight="179.0" minHeight="10.0" prefHeight="124.0" valignment="CENTER" vgrow="ALWAYS" />
+            <RowConstraints maxHeight="107.0" minHeight="10.0" prefHeight="32.0" valignment="CENTER" vgrow="NEVER" />
+          <RowConstraints maxHeight="107.0" minHeight="10.0" prefHeight="41.0" valignment="CENTER" vgrow="NEVER" />
+            <RowConstraints maxHeight="72.0" minHeight="10.0" prefHeight="24.0" valignment="CENTER" vgrow="NEVER" />
+          <RowConstraints maxHeight="80.0" minHeight="10.0" prefHeight="63.0" vgrow="SOMETIMES" />
+            <RowConstraints maxHeight="38.0" minHeight="9.0" prefHeight="38.0" vgrow="SOMETIMES" />
+            <RowConstraints maxHeight="10.0" minHeight="10.0" prefHeight="10.0" vgrow="SOMETIMES" />
+        </rowConstraints>
+         <children>
+            <Label text="Modifier une question" GridPane.columnIndex="1" GridPane.columnSpan="8" GridPane.halignment="CENTER" GridPane.valignment="CENTER">
+               <font>
+                  <Font name="Gill Sans MT" size="24.0" />
+               </font>
+            </Label>
+            <Label text="Enoncé de la question" GridPane.columnIndex="1" GridPane.columnSpan="2" GridPane.halignment="LEFT" GridPane.rowIndex="2" GridPane.valignment="BOTTOM">
+               <GridPane.margin>
+                  <Insets bottom="10.0" />
+               </GridPane.margin>
+            </Label>
+            <Label text="Chrono (s) :" GridPane.columnIndex="4" GridPane.halignment="LEFT" GridPane.rowIndex="2" GridPane.valignment="BOTTOM">
+               <GridPane.margin>
+                  <Insets bottom="10.0" />
+               </GridPane.margin>
+            </Label>
+            <TextField fx:id="timer" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" minHeight="-Infinity" onKeyPressed="#text_change" prefHeight="25.0" prefWidth="190.0" GridPane.columnIndex="6" GridPane.halignment="RIGHT" GridPane.hgrow="ALWAYS" GridPane.rowIndex="2" GridPane.valignment="CENTER">
+<!--               <opaqueInsets>
+                  <Insets bottom="10.0" />
+               </opaqueInsets>-->
+               <GridPane.margin>
+                  <Insets bottom="10.0" />
+               </GridPane.margin>
+            </TextField>
+            <TextArea fx:id="enonce" onKeyPressed="#text_change" prefHeight="200.0" prefWidth="200.0" wrapText="true" GridPane.columnIndex="1" GridPane.columnSpan="2" GridPane.halignment="CENTER" GridPane.hgrow="ALWAYS" GridPane.rowIndex="3" GridPane.valignment="CENTER" GridPane.vgrow="ALWAYS" />
+            <GridPane maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" GridPane.columnIndex="4" GridPane.halignment="CENTER" GridPane.hgrow="ALWAYS" GridPane.rowIndex="3" GridPane.valignment="CENTER" GridPane.vgrow="ALWAYS">
+              <columnConstraints>
+                  <ColumnConstraints halignment="LEFT" hgrow="NEVER" maxWidth="92.0" minWidth="10.0" prefWidth="29.0" />
+                <ColumnConstraints hgrow="ALWAYS" maxWidth="1.7976931348623157E308" minWidth="10.0" prefWidth="167.0" />
+              </columnConstraints>
+              <rowConstraints>
+                <RowConstraints maxHeight="20.0" minHeight="10.0" prefHeight="20.0" valignment="CENTER" vgrow="SOMETIMES" />
+                  <RowConstraints maxHeight="20.0" minHeight="10.0" prefHeight="20.0" vgrow="SOMETIMES" />
+                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+              </rowConstraints>
+               <children>
+                  <Label text="Réponse A" GridPane.columnIndex="1" GridPane.valignment="BASELINE">
+                     <GridPane.margin>
+                        <Insets bottom="10.0" />
+                     </GridPane.margin>
+                  </Label>
+                  <TextArea fx:id="rep_a" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" onKeyPressed="#text_change" onKeyReleased="#rep_text_change_a" prefHeight="200.0" prefWidth="200.0" wrapText="true" GridPane.columnSpan="2" GridPane.halignment="CENTER" GridPane.hgrow="ALWAYS" GridPane.rowIndex="2" GridPane.valignment="CENTER" GridPane.vgrow="ALWAYS" />
+                  <Label fx:id="nb_carac_restant_a" prefHeight="15.0" prefWidth="199.0" text="(255 caractères restants)" GridPane.columnSpan="2" GridPane.rowIndex="1">
+                     <font>
+                        <Font size="10.0" />
+                     </font>
+                  </Label>
+                  <CheckBox fx:id="checkbx_a" alignment="CENTER" mnemonicParsing="false" onAction="#checkbx_selected_action_a" GridPane.halignment="CENTER" GridPane.valignment="CENTER" />
+               </children>
+            </GridPane>
+            <GridPane GridPane.columnIndex="6" GridPane.halignment="CENTER" GridPane.hgrow="ALWAYS" GridPane.rowIndex="3" GridPane.valignment="CENTER" GridPane.vgrow="ALWAYS">
+               <children>
+                  <Label text="Réponse B" GridPane.columnIndex="1" GridPane.valignment="BASELINE">
+                     <GridPane.margin>
+                        <Insets bottom="10.0" />
+                     </GridPane.margin>
+                  </Label>
+                  <TextArea fx:id="rep_b" onKeyPressed="#text_change" onKeyReleased="#rep_text_change_b" prefHeight="200.0" prefWidth="200.0" wrapText="true" GridPane.columnSpan="2" GridPane.halignment="CENTER" GridPane.hgrow="ALWAYS" GridPane.rowIndex="2" GridPane.valignment="CENTER" GridPane.vgrow="ALWAYS" />
+                  <Label fx:id="nb_carac_restant_b" prefHeight="15.0" prefWidth="190.0" text="(255 caractères restants)" GridPane.columnSpan="2" GridPane.rowIndex="1">
+                     <font>
+                        <Font size="10.0" />
+                     </font>
+                  </Label>
+                  <CheckBox fx:id="checkbx_b" alignment="CENTER" mnemonicParsing="false" onAction="#checkbx_selected_action_b" GridPane.halignment="CENTER" GridPane.valignment="CENTER" />
+               </children>
+               <columnConstraints>
+                  <ColumnConstraints hgrow="NEVER" maxWidth="90.0" minWidth="10.0" prefWidth="31.0" />
+                  <ColumnConstraints hgrow="ALWAYS" maxWidth="1.7976931348623157E308" minWidth="10.0" prefWidth="159.0" />
+               </columnConstraints>
+               <rowConstraints>
+                  <RowConstraints maxHeight="20.0" minHeight="10.0" prefHeight="20.0" vgrow="SOMETIMES" />
+                  <RowConstraints maxHeight="20.0" minHeight="10.0" prefHeight="20.0" vgrow="SOMETIMES" />
+                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+               </rowConstraints>
+            </GridPane>
+            <GridPane GridPane.columnIndex="4" GridPane.halignment="CENTER" GridPane.hgrow="ALWAYS" GridPane.rowIndex="5" GridPane.valignment="CENTER" GridPane.vgrow="ALWAYS">
+               <children>
+                  <Label text="Réponse C" GridPane.columnIndex="1" GridPane.valignment="BASELINE">
+                     <GridPane.margin>
+                        <Insets bottom="10.0" />
+                     </GridPane.margin>
+                  </Label>
+                  <TextArea fx:id="rep_c" onKeyPressed="#text_change" onKeyReleased="#rep_text_change_c" prefHeight="200.0" prefWidth="200.0" wrapText="true" GridPane.columnSpan="2" GridPane.halignment="CENTER" GridPane.hgrow="ALWAYS" GridPane.rowIndex="2" GridPane.valignment="CENTER" GridPane.vgrow="ALWAYS" />
+                  <Label fx:id="nb_carac_restant_c" prefHeight="15.0" prefWidth="196.0" text="(255 caractères restants)" GridPane.columnSpan="2" GridPane.rowIndex="1">
+                     <font>
+                        <Font size="10.0" />
+                     </font>
+                  </Label>
+                  <CheckBox fx:id="checkbx_c" alignment="CENTER" mnemonicParsing="false" onAction="#checkbx_selected_action_c" GridPane.halignment="CENTER" GridPane.valignment="CENTER" />
+               </children>
+               <columnConstraints>
+                  <ColumnConstraints hgrow="NEVER" maxWidth="93.0" minWidth="10.0" prefWidth="31.0" />
+                  <ColumnConstraints hgrow="ALWAYS" maxWidth="1.7976931348623157E308" minWidth="10.0" prefWidth="165.0" />
+               </columnConstraints>
+               <rowConstraints>
+                  <RowConstraints maxHeight="20.0" minHeight="10.0" prefHeight="20.0" vgrow="SOMETIMES" />
+                  <RowConstraints maxHeight="20.0" minHeight="10.0" prefHeight="20.0" vgrow="SOMETIMES" />
+                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+               </rowConstraints>
+            </GridPane>
+            <GridPane GridPane.columnIndex="6" GridPane.halignment="CENTER" GridPane.hgrow="ALWAYS" GridPane.rowIndex="5" GridPane.valignment="CENTER" GridPane.vgrow="ALWAYS">
+               <children>
+                  <Label fx:id="nb_carac_restant_d" prefHeight="15.0" prefWidth="189.0" text="(255 caractères restants)" GridPane.columnSpan="2" GridPane.rowIndex="1">
+                     <font>
+                        <Font size="10.0" />
+                     </font>
+                  </Label>
+                  <Label text="Réponse D" GridPane.columnIndex="1" GridPane.valignment="BASELINE">
+                     <GridPane.margin>
+                        <Insets bottom="10.0" />
+                     </GridPane.margin>
+                  </Label>
+                  <TextArea fx:id="rep_d" onKeyPressed="#text_change" onKeyReleased="#rep_text_change_d" prefHeight="200.0" prefWidth="200.0" wrapText="true" GridPane.columnSpan="2" GridPane.halignment="CENTER" GridPane.hgrow="ALWAYS" GridPane.rowIndex="2" GridPane.valignment="CENTER" GridPane.vgrow="ALWAYS" />
+                  <CheckBox fx:id="checkbx_d" alignment="CENTER" mnemonicParsing="false" onAction="#checkbx_selected_action_d" GridPane.halignment="CENTER" GridPane.valignment="CENTER" />
+               </children>
+               <columnConstraints>
+                  <ColumnConstraints hgrow="NEVER" maxWidth="90.0" minWidth="10.0" prefWidth="32.0" />
+                  <ColumnConstraints hgrow="ALWAYS" maxWidth="1.7976931348623157E308" minWidth="10.0" prefWidth="158.0" />
+               </columnConstraints>
+               <rowConstraints>
+                  <RowConstraints maxHeight="20.0" minHeight="10.0" prefHeight="20.0" vgrow="SOMETIMES" />
+                  <RowConstraints maxHeight="20.0" minHeight="10.0" prefHeight="20.0" vgrow="SOMETIMES" />
+                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+               </rowConstraints>
+            </GridPane>
+            <Button alignment="CENTER" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#ajout_image" prefHeight="49.0" prefWidth="92.0" style="-fx-background-color: gray;" text="Ajouter une image" textAlignment="CENTER" textFill="WHITE" wrapText="true" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.hgrow="ALWAYS" GridPane.rowIndex="9" GridPane.valignment="CENTER" GridPane.vgrow="SOMETIMES">
+               <GridPane.margin>
+                  <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+               </GridPane.margin>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </Button>
+            <Button contentDisplay="RIGHT" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#delete_image" prefHeight="48.0" prefWidth="100.0" style="-fx-background-color: orange;" text="Supprimer image" textAlignment="CENTER" textFill="WHITE" wrapText="true" GridPane.columnIndex="2" GridPane.halignment="CENTER" GridPane.hgrow="ALWAYS" GridPane.rowIndex="9" GridPane.valignment="CENTER">
+               <GridPane.margin>
+                  <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+               </GridPane.margin>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </Button>
+            <Separator prefWidth="200.0" GridPane.columnIndex="1" GridPane.columnSpan="8" GridPane.rowIndex="1" />
+            <ComboBox fx:id="combo_competence" maxWidth="1.7976931348623157E308" onAction="#text_change" prefHeight="25.0" prefWidth="273.0" style="-fx-background-color: white; -fx-border-color: gray; -fx-border-radius: 6;" GridPane.columnIndex="4" GridPane.halignment="CENTER" GridPane.hgrow="ALWAYS" GridPane.rowIndex="7" GridPane.valignment="CENTER" GridPane.vgrow="NEVER" />
+            <Label fx:id="label_error" alignment="CENTER" prefHeight="17.0" prefWidth="372.0" text="Tous les champs doivent être complétés" textFill="#f20202" visible="false" GridPane.columnIndex="1" GridPane.columnSpan="6" GridPane.halignment="CENTER" GridPane.hgrow="ALWAYS" GridPane.rowIndex="8" GridPane.valignment="CENTER">
+               <font>
+                  <Font name="System Bold" size="14.0" />
+               </font>
+            </Label>
+            <ImageView fx:id="img_view" fitHeight="150.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="1" GridPane.columnSpan="2" GridPane.halignment="CENTER" GridPane.hgrow="ALWAYS" GridPane.rowIndex="5" GridPane.rowSpan="3" GridPane.valignment="CENTER" GridPane.vgrow="ALWAYS" />
+            <ComboBox fx:id="combo_sous_comp" maxWidth="1.7976931348623157E308" onAction="#text_change" prefHeight="25.0" prefWidth="273.0" style="-fx-background-color: white; -fx-border-color: gray; -fx-border-radius: 6;" GridPane.columnIndex="6" GridPane.halignment="CENTER" GridPane.hgrow="ALWAYS" GridPane.rowIndex="7" GridPane.valignment="CENTER" GridPane.vgrow="NEVER" />
+            <Label onMouseClicked="#open_competence" prefHeight="17.0" prefWidth="191.0" text="Catégorie" textFill="#4286f4" underline="true" GridPane.columnIndex="4" GridPane.halignment="LEFT" GridPane.rowIndex="6">
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </Label>
+            <Label onMouseClicked="#open_sous_comp" prefHeight="17.0" prefWidth="206.0" text="Compétence" textFill="#4286f4" underline="true" GridPane.columnIndex="6" GridPane.halignment="LEFT" GridPane.rowIndex="6">
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </Label>
+            <Label fx:id="error_label_timer" prefHeight="17.0" prefWidth="195.0" text="Valeur de timer erronée ou &gt;5400s" textFill="#f20101" visible="false" wrapText="true" GridPane.columnIndex="1" GridPane.columnSpan="3" GridPane.halignment="LEFT" GridPane.rowIndex="8" />
+            <Label fx:id="label_ajout_ok" prefHeight="27.0" prefWidth="188.0" text="Modification réussie" textFill="#29d07a" visible="false" GridPane.columnIndex="4" GridPane.rowIndex="8">
+               <font>
+                  <Font name="System Bold" size="18.0" />
+               </font>
+            </Label>
+            <Pagination fx:id="pagination_quest" prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="3" GridPane.columnSpan="2" GridPane.rowIndex="10">
+               <GridPane.margin>
+                  <Insets top="5.0" />
+               </GridPane.margin>
+            </Pagination>
+            <GridPane GridPane.columnIndex="4" GridPane.columnSpan="3" GridPane.rowIndex="9">
+              <columnConstraints>
+                <ColumnConstraints hgrow="SOMETIMES" maxWidth="146.0" minWidth="10.0" prefWidth="128.0" />
+                  <ColumnConstraints hgrow="SOMETIMES" maxWidth="125.0" minWidth="10.0" prefWidth="123.0" />
+                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+              </columnConstraints>
+              <rowConstraints>
+                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+              </rowConstraints>
+               <children>
+                  <Button maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#modif_question" prefHeight="51.0" prefWidth="91.0" style="-fx-background-color: blue;" text="Modifier question" textAlignment="CENTER" textFill="WHITE" wrapText="true" GridPane.halignment="CENTER" GridPane.hgrow="ALWAYS" GridPane.valignment="CENTER" GridPane.vgrow="SOMETIMES">
+                     <GridPane.margin>
+                        <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                     </GridPane.margin>
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                  </Button>
+                  <Button maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#annuler_modif" prefHeight="50.0" prefWidth="101.0" style="-fx-background-color: red;" text="Annuler" textAlignment="CENTER" textFill="WHITE" wrapText="true" GridPane.columnIndex="2" GridPane.halignment="CENTER" GridPane.hgrow="ALWAYS" GridPane.valignment="CENTER" GridPane.vgrow="SOMETIMES">
+                     <GridPane.margin>
+                        <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                     </GridPane.margin>
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                  </Button>
+                  <Button maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#delete_question" prefHeight="41.0" prefWidth="123.0" style="-fx-background-color: orange;" text="Supprimer question" textAlignment="CENTER" textFill="WHITE" wrapText="true" GridPane.columnIndex="1">
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                  </Button>
+               </children>
+            </GridPane>
+         </children>
+      </GridPane>
+   </children>
+</AnchorPane>

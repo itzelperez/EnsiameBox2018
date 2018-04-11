@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.effect.*?>
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<AnchorPane id="AnchorPane" fx:id="content" minHeight="332.0" prefHeight="386.0" prefWidth="665.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="opisiame.controller.utilisateur.menu_adminController">
+  <children>
+    <GridPane alignment="CENTER" gridLinesVisible="false" prefHeight="386.0" prefWidth="665.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+      <children>
+        <Button fx:id="Eleves" cancelButton="false" defaultButton="false" mnemonicParsing="false" onMouseClicked="#ClicBoutonQuiz" prefHeight="72.0" prefWidth="145.0" style="-fx-background-color: adff2f; -fx-background-radius: 202020;" text="Quiz" textAlignment="CENTER" underline="false" wrapText="true" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.hgrow="ALWAYS" GridPane.rowIndex="1" GridPane.valignment="CENTER" GridPane.vgrow="ALWAYS">
+          <font>
+            <Font name="System Bold" size="14.0" fx:id="x1" />
+          </font>
+          <GridPane.margin>
+            <Insets fx:id="x2" />
+          </GridPane.margin>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+        </Button>
+        <Button cancelButton="false" defaultButton="false" font="$x1" mnemonicParsing="false" onMouseClicked="#ClicBoutonCompetences" prefHeight="72.0" prefWidth="145.0" style="-fx-background-color: ff978c; -fx-background-radius: 202020;" text="Catégories" textAlignment="CENTER" underline="false" wrapText="true" GridPane.columnIndex="3" GridPane.halignment="CENTER" GridPane.hgrow="ALWAYS" GridPane.rowIndex="1" GridPane.valignment="CENTER" GridPane.vgrow="ALWAYS">
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor></Button>
+        <ImageView fitHeight="41.0" fitWidth="45.0" onMouseClicked="#ClicImageOnOff" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="4" GridPane.halignment="CENTER" GridPane.hgrow="ALWAYS" GridPane.valignment="CENTER" GridPane.vgrow="ALWAYS">
+          <image>
+            <Image url="@../../image/on_off.png" />
+          </image>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+        </ImageView>
+            <ImageView fitHeight="40.0" fitWidth="40.0" onMouseClicked="#ClicBoutonParam" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="4" GridPane.halignment="CENTER" GridPane.rowIndex="3" GridPane.valignment="CENTER">
+               <image>
+                  <Image url="@../../image/param.png" />
+               </image>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </ImageView>
+        <Button cancelButton="false" defaultButton="false" font="$x1" mnemonicParsing="false" onMouseClicked="#ClicBoutonEleves" prefHeight="72.0" prefWidth="145.0" style="-fx-background-color: #99ffea; -fx-background-radius: 202020;" text="Etudiants" textAlignment="CENTER" underline="false" wrapText="true" GridPane.columnIndex="2" GridPane.halignment="CENTER" GridPane.hgrow="ALWAYS" GridPane.margin="$x2" GridPane.rowIndex="2" GridPane.valignment="CENTER" GridPane.vgrow="ALWAYS">
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </Button>
+            <Button cancelButton="false" defaultButton="false" font="$x1" mnemonicParsing="false" onMouseClicked="#ClicBoutonEnseignants" prefHeight="72.0" prefWidth="145.0" style="-fx-background-color: ffec75; -fx-background-radius: 202020;" text="Enseignants" textAlignment="CENTER" underline="false" wrapText="true" GridPane.columnIndex="3" GridPane.halignment="CENTER" GridPane.rowIndex="2" GridPane.valignment="CENTER">
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </Button>
+            <Button cancelButton="false" defaultButton="false" font="$x1" mnemonicParsing="false" onMouseClicked="#ClicBoutonAnimateurs" prefHeight="72.0" prefWidth="145.0" style="-fx-background-color: f2b780; -fx-background-radius: 202020;" text="Animateurs" textAlignment="CENTER" underline="false" wrapText="true" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="2" GridPane.valignment="CENTER">
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </Button>
+            <Button cancelButton="false" defaultButton="false" font="$x1" mnemonicParsing="false" onMouseClicked="#ClicBoutonJury" prefHeight="72.0" prefWidth="145.0" style="-fx-background-color: #D0A9F5; -fx-background-radius: 202020;" text="Jury" textAlignment="CENTER" underline="false" wrapText="true" GridPane.columnIndex="2" GridPane.halignment="CENTER" GridPane.hgrow="ALWAYS" GridPane.rowIndex="1" GridPane.valignment="CENTER" GridPane.vgrow="ALWAYS">
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </Button>
+            <ImageView fitHeight="80.0" fitWidth="194.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="2">
+               <image>
+                  <Image url="@../../image/opisiame_logo.png" />
+               </image>
+            </ImageView>
+      </children>
+      <columnConstraints>
+            <ColumnConstraints hgrow="SOMETIMES" maxWidth="185.0" minWidth="40.0" prefWidth="65.0" />
+        <ColumnConstraints hgrow="SOMETIMES" maxWidth="185.0" minWidth="40.0" prefWidth="145.0" />
+        <ColumnConstraints hgrow="SOMETIMES" maxWidth="185.0" minWidth="40.0" prefWidth="145.0" />
+        <ColumnConstraints hgrow="SOMETIMES" maxWidth="185.0" minWidth="40.0" prefWidth="145.0" />
+        <ColumnConstraints hgrow="SOMETIMES" maxWidth="185.0" minWidth="40.0" prefWidth="45.0" />
+      </columnConstraints>
+      <rowConstraints>
+        <RowConstraints fillHeight="false" maxHeight="140.0" minHeight="60.0" prefHeight="117.0" vgrow="NEVER" />
+        <RowConstraints fillHeight="false" maxHeight="140.0" minHeight="95.0" prefHeight="116.0" vgrow="NEVER" />
+        <RowConstraints fillHeight="false" maxHeight="140.0" minHeight="95.0" prefHeight="101.0" vgrow="NEVER" />
+        <RowConstraints fillHeight="false" maxHeight="55.0" minHeight="55.0" prefHeight="55.0" vgrow="SOMETIMES" />
+      </rowConstraints>
+    </GridPane>
+  </children>
+</AnchorPane>

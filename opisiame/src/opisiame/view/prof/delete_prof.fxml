@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.paint.*?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.text.*?>
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane id="AnchorPane" fx:id="content" prefHeight="200.0" prefWidth="469.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="opisiame.controller.prof.Delete_profController">
+    <children>
+        <VBox alignment="TOP_CENTER" prefHeight="200.0" prefWidth="469.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+            <children>
+                <Label prefHeight="65.0" prefWidth="432.0" text="Ces enseignants seront supprimés" textFill="#f80606">
+                    <font>
+                        <Font size="18.0" />
+                    </font>
+                </Label>
+                <Separator prefWidth="200.0" />
+                <Label prefHeight="69.0" prefWidth="419.0" text="Etes-vous sûr de vouloir les supprimer?">
+                    <font>
+                        <Font size="14.0" />
+                    </font>
+                </Label>
+                <Separator prefWidth="200.0" />
+                <HBox alignment="CENTER_RIGHT" prefHeight="73.0" prefWidth="469.0">
+                    <children>
+                        <Button mnemonicParsing="false" onAction="#Confirmer" style="-fx-background-color: green;" text="Confirmer" textFill="WHITE">
+                            <HBox.margin>
+                                <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
+                            </HBox.margin>
+                            <font>
+                                <Font size="14.0" />
+                            </font>
+                        </Button>
+                        <Button cancelButton="true" mnemonicParsing="false" onAction="#Annuler" style="-fx-background-color: red;" text="Annuler" textFill="WHITE">
+                            <HBox.margin>
+                                <Insets bottom="20.0" right="20.0" top="20.0" />
+                            </HBox.margin>
+                            <font>
+                                <Font size="14.0" />
+                            </font>
+                        </Button>
+                    </children>
+                </HBox>
+            </children>
+        </VBox>
+    </children>
+</AnchorPane>

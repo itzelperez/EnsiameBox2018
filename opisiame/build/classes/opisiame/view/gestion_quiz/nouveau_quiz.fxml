@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.image.*?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.text.*?>
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane id="AnchorPane" fx:id="content" prefHeight="369.0" prefWidth="604.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="opisiame.controller.gestion_quiz.NouveauQuizController">
+   <children>
+      <VBox prefHeight="400.0" prefWidth="600.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <children>
+            <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Ajout quiz" textAlignment="CENTER" wrappingWidth="603.44140625" VBox.vgrow="ALWAYS">
+               <font>
+                  <Font name="Gill Sans MT" size="24.0" />
+               </font>
+               <VBox.margin>
+                  <Insets top="10.0" />
+               </VBox.margin>
+            </Text>
+            <GridPane prefHeight="363.0" prefWidth="601.0" VBox.vgrow="ALWAYS">
+              <columnConstraints>
+                  <ColumnConstraints hgrow="SOMETIMES" maxWidth="295.0" minWidth="10.0" prefWidth="28.0" />
+                <ColumnConstraints halignment="CENTER" hgrow="ALWAYS" maxWidth="295.0" minWidth="10.0" prefWidth="135.0" />
+                <ColumnConstraints halignment="CENTER" hgrow="ALWAYS" maxWidth="443.0" minWidth="10.0" prefWidth="443.0" />
+              </columnConstraints>
+              <rowConstraints>
+                <RowConstraints minHeight="10.0" prefHeight="30.0" valignment="CENTER" vgrow="ALWAYS" />
+              </rowConstraints>
+               <children>
+                  <GridPane GridPane.columnIndex="2" GridPane.halignment="CENTER" GridPane.hgrow="ALWAYS" GridPane.valignment="CENTER" GridPane.vgrow="ALWAYS">
+                    <columnConstraints>
+                      <ColumnConstraints hgrow="SOMETIMES" maxWidth="187.0" minWidth="10.0" prefWidth="119.0" />
+                      <ColumnConstraints hgrow="SOMETIMES" maxWidth="342.0" minWidth="10.0" prefWidth="285.0" />
+                        <ColumnConstraints hgrow="SOMETIMES" maxWidth="327.0" minWidth="10.0" prefWidth="67.0" />
+                    </columnConstraints>
+                    <rowConstraints>
+                        <RowConstraints maxHeight="144.0" minHeight="10.0" prefHeight="29.0" vgrow="SOMETIMES" />
+                      <RowConstraints maxHeight="151.0" minHeight="10.0" prefHeight="78.0" vgrow="SOMETIMES" />
+                        <RowConstraints maxHeight="144.0" minHeight="10.0" prefHeight="36.0" vgrow="SOMETIMES" />
+                      <RowConstraints maxHeight="145.0" minHeight="10.0" prefHeight="79.0" vgrow="SOMETIMES" />
+                        <RowConstraints maxHeight="145.0" minHeight="10.0" prefHeight="37.0" vgrow="SOMETIMES" />
+                      <RowConstraints maxHeight="105.0" minHeight="10.0" prefHeight="77.0" vgrow="SOMETIMES" />
+                    </rowConstraints>
+                     <children>
+                        <Label prefHeight="36.0" prefWidth="80.0" text="Nom du quiz" GridPane.rowIndex="1" />
+                        <Label prefHeight="38.0" prefWidth="80.0" text="Timer" GridPane.rowIndex="3" />
+                        <GridPane GridPane.columnIndex="1" GridPane.rowIndex="5">
+                          <columnConstraints>
+                              <ColumnConstraints hgrow="SOMETIMES" maxWidth="97.0" minWidth="10.0" prefWidth="54.0" />
+                            <ColumnConstraints hgrow="SOMETIMES" maxWidth="145.0" minWidth="10.0" prefWidth="145.0" />
+                            <ColumnConstraints hgrow="SOMETIMES" maxWidth="96.0" minWidth="10.0" prefWidth="87.0" />
+                          </columnConstraints>
+                          <rowConstraints>
+                            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                          </rowConstraints>
+                           <children>
+                              <Button mnemonicParsing="false" onAction="#btn_valider" prefHeight="36.0" prefWidth="126.0" style="-fx-background-color: blue;" text="Editer les questions" textFill="WHITE" GridPane.columnIndex="1">
+                                 <cursor>
+                                    <Cursor fx:constant="HAND" />
+                                 </cursor>
+                              </Button>
+                              <Button mnemonicParsing="false" onAction="#btn_close" prefHeight="36.0" prefWidth="73.0" style="-fx-background-color: red;" text="Annuler" textFill="WHITE" GridPane.columnIndex="2">
+                                 <cursor>
+                                    <Cursor fx:constant="HAND" />
+                                 </cursor>
+                              </Button>
+                           </children>
+                        </GridPane>
+                        <TextField fx:id="nom_quiz" onKeyPressed="#nom_set_label_error_not_visible" prefHeight="30.0" prefWidth="303.0" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                        <TextField fx:id="timer" disable="true" onKeyPressed="#timer_set_label_error_not_visible" prefHeight="31.0" prefWidth="303.0" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+                        <CheckBox fx:id="chkb_timer" mnemonicParsing="false" onAction="#check_timer" GridPane.columnIndex="2" GridPane.halignment="CENTER" GridPane.rowIndex="3" GridPane.valignment="CENTER" />
+                        <Label fx:id="label_number_timer_error" prefHeight="43.0" prefWidth="276.0" text="Valeur incorrecte (seulement des chiffres)" textFill="#f50707" visible="false" GridPane.columnIndex="1" GridPane.rowIndex="4">
+                           <font>
+                              <Font name="System Bold Italic" size="12.0" />
+                           </font>
+                        </Label>
+                        <Label fx:id="label_error_timer" prefHeight="35.0" prefWidth="278.0" text="Ce champ est requis" textFill="#f80707" visible="false" GridPane.columnIndex="1" GridPane.rowIndex="4">
+                           <font>
+                              <Font name="System Bold Italic" size="12.0" />
+                           </font>
+                        </Label>
+                        <Label fx:id="label_error_login" prefHeight="35.0" prefWidth="278.0" text="Ce champ est requis" textFill="#f80707" visible="false" GridPane.columnIndex="1" GridPane.rowIndex="2">
+                           <font>
+                              <Font name="System Bold Italic" size="12.0" />
+                           </font>
+                        </Label>
+                     </children>
+                  </GridPane>
+                  <GridPane GridPane.columnIndex="1">
+                    <columnConstraints>
+                      <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                    </columnConstraints>
+                    <rowConstraints>
+                      <RowConstraints maxHeight="246.0" minHeight="10.0" prefHeight="246.0" vgrow="SOMETIMES" />
+                      <RowConstraints maxHeight="133.0" minHeight="10.0" prefHeight="117.0" vgrow="SOMETIMES" />
+                    </rowConstraints>
+                     <children>
+                        <ImageView fitHeight="121.0" fitWidth="131.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../../image/img_quiz.jpg" />
+                           </image>
+                        </ImageView>
+                     </children>
+                  </GridPane>
+               </children>
+            </GridPane>
+         </children>
+      </VBox>
+   </children>
+</AnchorPane>

@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.text.*?>
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane id="AnchorPane" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="opisiame.controller.gestion_quiz.Affichage_quizController">
+   <children>
+      <GridPane prefHeight="400.0" prefWidth="600.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+        <columnConstraints>
+          <ColumnConstraints hgrow="ALWAYS" maxWidth="-Infinity" minWidth="10.0" prefWidth="50.0" />
+            <ColumnConstraints hgrow="ALWAYS" maxWidth="-Infinity" minWidth="10.0" prefWidth="50.0" />
+            <ColumnConstraints hgrow="ALWAYS" maxWidth="-Infinity" minWidth="10.0" prefWidth="50.0" />
+            <ColumnConstraints hgrow="ALWAYS" maxWidth="-Infinity" minWidth="10.0" prefWidth="50.0" />
+            <ColumnConstraints hgrow="ALWAYS" minWidth="10.0" prefWidth="200.0" />
+            <ColumnConstraints halignment="RIGHT" hgrow="ALWAYS" maxWidth="-Infinity" minWidth="10.0" prefWidth="50.0" />
+            <ColumnConstraints halignment="CENTER" hgrow="ALWAYS" maxWidth="-Infinity" minWidth="10.0" prefWidth="50.0" />
+            <ColumnConstraints halignment="CENTER" hgrow="ALWAYS" maxWidth="-Infinity" minWidth="10.0" prefWidth="50.0" />
+            <ColumnConstraints halignment="CENTER" hgrow="ALWAYS" maxWidth="-Infinity" minWidth="10.0" prefWidth="50.0" />
+        </columnConstraints>
+        <rowConstraints>
+            <RowConstraints minHeight="10.0" prefHeight="30.0" valignment="CENTER" vgrow="ALWAYS" />
+          <RowConstraints minHeight="10.0" prefHeight="30.0" valignment="CENTER" vgrow="ALWAYS" />
+            <RowConstraints minHeight="10.0" prefHeight="30.0" valignment="CENTER" vgrow="ALWAYS" />
+          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="ALWAYS" />
+          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="ALWAYS" />
+        </rowConstraints>
+         <children>
+            <Text fx:id="label_titre" strokeType="OUTSIDE" strokeWidth="0.0" text="QUIZ 1" textAlignment="CENTER" wrappingWidth="591.62890625" GridPane.columnSpan="9" GridPane.halignment="CENTER" GridPane.valignment="CENTER">
+               <font>
+                  <Font name="Gill Sans MT" size="24.0" />
+               </font>
+            </Text>
+            <Button alignment="CENTER" mnemonicParsing="false" onAction="#voir_questions" prefHeight="30.0" prefWidth="137.0" style="-fx-background-color: #10cc00;" text="Voir le questionnaire" textAlignment="CENTER" textFill="WHITE" GridPane.columnIndex="4" GridPane.rowIndex="4">
+               <GridPane.margin>
+                  <Insets left="45.0" />
+               </GridPane.margin>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor></Button>
+            <Button fx:id="btn_delete" alignment="CENTER" mnemonicParsing="false" prefHeight="30.0" prefWidth="76.0" style="-fx-background-color: cc0000;" text="Supprimer" textAlignment="CENTER" textFill="WHITE" GridPane.columnIndex="7" GridPane.columnSpan="2" GridPane.halignment="CENTER" GridPane.rowIndex="4">
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor></Button>
+            <Button fx:id="btn_modif" mnemonicParsing="false" prefHeight="29.0" prefWidth="66.0" style="-fx-background-color: grey;" text="Modifer" textFill="WHITE" GridPane.columnIndex="5" GridPane.columnSpan="2" GridPane.halignment="CENTER" GridPane.rowIndex="4">
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor></Button>
+            <Label text="Date de creation" GridPane.columnIndex="3" GridPane.columnSpan="2" GridPane.halignment="LEFT" GridPane.rowIndex="1" />
+            <Label text="Timer" GridPane.columnIndex="3" GridPane.columnSpan="2" GridPane.rowIndex="2" />
+
+            <Label text="Nombre de question" GridPane.columnIndex="3" GridPane.columnSpan="5" GridPane.rowIndex="3" />
+
+            <ImageView fitHeight="94.0" fitWidth="90.0" pickOnBounds="true" preserveRatio="true" GridPane.columnSpan="3" GridPane.halignment="CENTER" GridPane.rowIndex="2">
+               <image>
+                  <Image url="@../../image/img_quiz.jpg" />
+               </image>
+            </ImageView>
+            <Separator prefHeight="0.0" prefWidth="200.0" style="-fx-background-color: #10cc00;" GridPane.columnIndex="3" GridPane.columnSpan="5" GridPane.rowIndex="1">
+               <GridPane.margin>
+                  <Insets top="40.0" />
+               </GridPane.margin>
+            </Separator>
+            <Separator prefHeight="0.0" prefWidth="200.0" style="-fx-background-color: #10cc00;" GridPane.columnIndex="3" GridPane.columnSpan="5" GridPane.rowIndex="2">
+               <GridPane.margin>
+                  <Insets top="40.0" />
+               </GridPane.margin>
+            </Separator>
+            <Separator prefHeight="0.0" prefWidth="200.0" style="-fx-background-color: #10cc00;" GridPane.columnIndex="3" GridPane.columnSpan="5" GridPane.rowIndex="3">
+               <GridPane.margin>
+                  <Insets top="40.0" />
+               </GridPane.margin>
+            </Separator>
+            <Label fx:id="label_date" prefHeight="28.0" prefWidth="150.0" text="Label" GridPane.columnIndex="5" GridPane.columnSpan="3" GridPane.halignment="RIGHT" GridPane.rowIndex="1" />
+            <Label fx:id="label_nb_quest" prefHeight="28.0" prefWidth="151.0" text="Label" GridPane.columnIndex="5" GridPane.columnSpan="3" GridPane.rowIndex="2" GridPane.rowSpan="3" />
+            <Label fx:id="label_timer" prefHeight="28.0" prefWidth="150.0" text="Label" GridPane.columnIndex="5" GridPane.columnSpan="3" GridPane.rowIndex="2" />
+         </children>
+      </GridPane>
+   </children>
+</AnchorPane>

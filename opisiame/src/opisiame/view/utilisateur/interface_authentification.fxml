@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.paint.*?>
+<?import javafx.scene.text.*?>
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.effect.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.shape.*?>
+
+<AnchorPane id="AnchorPane" fx:id="content" prefHeight="500.0" prefWidth="600.0" rotate="0.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="opisiame.controller.utilisateur.Interface_authentificationController">
+  <children>
+    <GridPane prefHeight="-1.0" prefWidth="-1.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+      <children>
+        <AnchorPane id="AnchorPane" minHeight="-Infinity" minWidth="-Infinity" prefHeight="-1.0" prefWidth="-1.0" GridPane.columnIndex="1" GridPane.halignment="LEFT" GridPane.hgrow="ALWAYS" GridPane.rowIndex="1" GridPane.valignment="TOP" GridPane.vgrow="ALWAYS">
+          <children>
+            <Rectangle arcHeight="100.0" arcWidth="100.0" cache="false" disable="false" fill="#1e90ff00" focusTraversable="false" height="454.5" mouseTransparent="false" opacity="1.0" pickOnBounds="false" stroke="GREENYELLOW" strokeLineCap="ROUND" strokeLineJoin="ROUND" strokeType="CENTERED" strokeWidth="3.0" width="550.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
+            <GridPane prefHeight="458.0" prefWidth="553.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.5" AnchorPane.rightAnchor="-0.5" AnchorPane.topAnchor="0.0">
+              <children>
+                <PasswordField fx:id="Passwd_field" focusTraversable="false" prefHeight="25.0" prefWidth="199.0" style="-fx-background-color: #adff2f;" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+                <TextField fx:id="Login_field" prefHeight="25.0" prefWidth="138.0" style="-fx-background-color: #adff2f;" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                <Label prefHeight="32.0" prefWidth="82.0" text="Identifiant" GridPane.columnIndex="0" GridPane.halignment="CENTER" GridPane.rowIndex="1" GridPane.valignment="CENTER" />
+                <Label prefHeight="32.0" prefWidth="98.0" text="Mot de passe" GridPane.columnIndex="0" GridPane.halignment="CENTER" GridPane.rowIndex="3" GridPane.valignment="CENTER" />
+
+                <Polygon fx:id="Submit_field" fill="GREENYELLOW" onMouseClicked="#Submit_passwd" rotate="90.0" scaleX="0.38" scaleY="0.3" stroke="BLACK" strokeType="INSIDE" GridPane.columnIndex="3" GridPane.rowIndex="2">
+
+                  <points>
+                    <Double fx:value="-50.0" />
+                    <Double fx:value="40.0" />
+                    <Double fx:value="50.0" />
+                    <Double fx:value="40.0" />
+                    <Double fx:value="0.0" />
+                    <Double fx:value="-60.0" />
+                  </points>
+                           <cursor>
+                              <Cursor fx:constant="HAND" />
+                           </cursor>
+                </Polygon>
+                <ImageView fitHeight="81.0" fitWidth="192.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="1" GridPane.columnSpan="2" GridPane.halignment="CENTER" GridPane.rowSpan="1" GridPane.valignment="CENTER">
+                  <image>
+                    <Image url="@../../image/opisiame_logo.png" />
+                  </image>
+                  <GridPane.margin>
+                    <Insets />
+                  </GridPane.margin>
+                </ImageView>
+                        <ImageView fitHeight="79.0" fitWidth="133.0" pickOnBounds="true" preserveRatio="true" GridPane.halignment="CENTER" GridPane.valignment="CENTER">
+                           <image>
+                              <Image url="@../../image/Ensiame_Logo_Png.png" />
+                           </image>
+                        </ImageView>
+                        <ImageView fitHeight="86.0" fitWidth="134.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="2" GridPane.halignment="LEFT" GridPane.valignment="CENTER">
+                           <image>
+                              <Image url="@../../image/uvhc.png" />
+                           </image>
+                        </ImageView>
+                        <GridPane GridPane.columnIndex="1" GridPane.rowIndex="4">
+                          <columnConstraints>
+                            <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                          </columnConstraints>
+                          <rowConstraints>
+                            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                          </rowConstraints>
+                           <children>
+                      <Label fx:id="Message_field" alignment="TOP_LEFT" contentDisplay="TOP" prefHeight="32.0" prefWidth="199.0" text="En attente d'authentification" GridPane.valignment="TOP" />
+                              <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Si vous avez oublié votre mot de passe, contactez l'administrateur" textAlignment="CENTER" GridPane.halignment="CENTER" GridPane.rowIndex="1">
+                                 <font>
+                                    <Font size="12.0" />
+                                 </font>
+                              </Text>
+                           </children>
+                        </GridPane>
+              </children>
+              <columnConstraints>
+                <ColumnConstraints hgrow="SOMETIMES" maxWidth="178.0" minWidth="10.0" prefWidth="166.0" />
+                <ColumnConstraints hgrow="SOMETIMES" maxWidth="271.0" minWidth="10.0" prefWidth="231.0" />
+                <ColumnConstraints hgrow="SOMETIMES" maxWidth="137.0" minWidth="10.0" prefWidth="18.0" />
+                <ColumnConstraints hgrow="SOMETIMES" maxWidth="138.0" minWidth="10.0" prefWidth="138.0" />
+              </columnConstraints>
+              <rowConstraints>
+                <RowConstraints maxHeight="137.0" minHeight="10.0" prefHeight="116.0" vgrow="SOMETIMES" />
+                <RowConstraints maxHeight="147.0" minHeight="10.0" prefHeight="98.0" vgrow="SOMETIMES" />
+                <RowConstraints maxHeight="91.0" minHeight="10.0" prefHeight="38.0" vgrow="SOMETIMES" />
+                <RowConstraints maxHeight="113.0" minHeight="10.0" prefHeight="80.0" vgrow="SOMETIMES" />
+                <RowConstraints maxHeight="126.0" minHeight="10.0" prefHeight="126.0" vgrow="SOMETIMES" />
+              </rowConstraints>
+            </GridPane>
+          </children>
+          <GridPane.margin>
+            <Insets />
+          </GridPane.margin>
+        </AnchorPane>
+      </children>
+      <columnConstraints>
+        <ColumnConstraints hgrow="SOMETIMES" maxWidth="199.0" minWidth="10.0" prefWidth="25.0" />
+        <ColumnConstraints hgrow="SOMETIMES" maxWidth="574.0" minWidth="10.0" prefWidth="551.0" />
+        <ColumnConstraints hgrow="SOMETIMES" maxWidth="200.0" minWidth="1.0" prefWidth="24.0" />
+      </columnConstraints>
+      <rowConstraints>
+        <RowConstraints maxHeight="165.0" minHeight="10.0" prefHeight="18.0" vgrow="SOMETIMES" />
+        <RowConstraints maxHeight="476.0" minHeight="10.0" prefHeight="457.0" vgrow="SOMETIMES" />
+        <RowConstraints maxHeight="166.0" minHeight="6.0" prefHeight="25.0" vgrow="SOMETIMES" />
+      </rowConstraints>
+    </GridPane>
+  </children>
+</AnchorPane>

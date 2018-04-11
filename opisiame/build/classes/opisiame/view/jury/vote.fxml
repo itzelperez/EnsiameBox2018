@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.chart.*?>
+<?import javafx.scene.text.*?>
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane id="AnchorPane" fx:id="content" prefHeight="613.0" prefWidth="617.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="opisiame.controller.gestion_jury.Vote_Controller">
+   <children>
+      <Text layoutX="278.0" layoutY="44.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Vote">
+         <font>
+            <Font size="28.0" />
+         </font>
+      </Text>
+      <Text layoutX="43.0" layoutY="75.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Nom(s) de(s) l'étudiant(s)">
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font>
+      </Text>
+      <Text layoutX="44.0" layoutY="204.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Motif du vote" />
+      <Group layoutX="6.0" layoutY="49.0">
+         <children>
+            <Text layoutX="397.0" layoutY="347.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Temps restant:" />
+            <Text layoutX="54.0" layoutY="347.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Nombre de votants:" />
+            <Text layoutX="231.0" layoutY="347.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Nombre de votes:" />
+            <Label fx:id="no_votants" layoutX="167.0" layoutY="332.0" prefHeight="22.0" prefWidth="55.0" text="Label" />
+            <Label layoutX="333.0" layoutY="330.0" prefHeight="25.0" prefWidth="55.0" text="Label" />
+         </children>
+      </Group>
+      <TableView fx:id="Tableau" layoutX="36.0" layoutY="78.0" prefHeight="111.0" prefWidth="553.0" tableMenuButtonVisible="true">
+         <columnResizePolicy>
+            <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
+         </columnResizePolicy>
+         <columns>
+            <TableColumn fx:id="Nom" prefWidth="166.0" text="Nom" />
+            <TableColumn fx:id="Prenom" prefWidth="155.0" text="Prénom" />
+            <TableColumn fx:id="id" prefWidth="116.0" text="N° étudiant" />
+            <TableColumn fx:id="Filiere" prefWidth="55.0" text="Filière" />
+            <TableColumn fx:id="Annee" prefWidth="56.0" text="Année" />
+         </columns>
+      </TableView>
+      <TextField layoutX="36.0" layoutY="208.0" prefHeight="67.0" prefWidth="553.0" />
+      <PieChart layoutX="52.0" layoutY="409.0" prefHeight="193.0" prefWidth="514.0" title="RESULTATS" />
+      <Group layoutX="-1.0" layoutY="38.0">
+         <children>
+            <Button fx:id="Votez" layoutX="256.0" layoutY="283.0" mnemonicParsing="false" onAction="#Votez" prefHeight="37.0" prefWidth="109.0" style="-fx-background-color: #82FA58;" text="Votez">
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </Button>
+            <Button fx:id="Attendez" layoutX="98.0" layoutY="283.0" mnemonicParsing="false" onAction="#Attendez" prefHeight="37.0" prefWidth="109.0" style="-fx-background-color: #F3F781;" text="Attendez" AnchorPane.leftAnchor="95.0">
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </Button>
+            <Button fx:id="Arretez" layoutX="413.0" layoutY="283.0" mnemonicParsing="false" onAction="#Arretez" prefHeight="37.0" prefWidth="109.0" style="-fx-background-color: FA5858;" text="Arrétez" AnchorPane.rightAnchor="95.0">
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </Button>
+         </children>
+      </Group>
+      <Button layoutX="225.0" layoutY="282.0" mnemonicParsing="false" onAction="#btn_valider" text="Valider" />
+      <Text layoutX="36.0" layoutY="300.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Régler la minuterie" />
+      <TextField fx:id="Vote_timer" layoutX="143.0" layoutY="282.0" onKeyPressed="#timer_set_label_error_not_visible" prefHeight="25.0" prefWidth="78.0" />
+      <Label fx:id="label_error_timer" layoutX="285.0" layoutY="277.0" prefHeight="37.0" prefWidth="304.0" text="Ce champ est requis" textFill="#f80707" visible="false">
+         <font>
+            <Font name="System Bold Italic" size="12.0" />
+         </font>
+      </Label>
+      <Label fx:id="label_number_timer_error" layoutX="286.0" layoutY="276.0" prefHeight="37.0" prefWidth="304.0" text="Valeur incorrecte (seulement des chiffres)" textFill="#f50707" visible="false">
+         <font>
+            <Font name="System Bold Italic" size="12.0" />
+         </font>
+      </Label>
+      <Label text="Label" />
+      <Label layoutX="492.0" layoutY="379.0" prefHeight="25.0" prefWidth="58.0" text="Label" />
+   </children>
+</AnchorPane>

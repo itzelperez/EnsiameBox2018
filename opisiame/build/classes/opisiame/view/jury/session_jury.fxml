@@ -1,0 +1,125 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.image.*?>
+<?import javafx.embed.swing.*?>
+<?import javafx.scene.text.*?>
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane id="AnchorPane" fx:id="content" prefHeight="531.0" prefWidth="594.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="opisiame.controller.gestion_jury.session_vote">
+   <children>
+      <Group layoutY="127.0">
+         <children>
+            <Button fx:id="btn_disconnect" layoutX="185.0" layoutY="94.0" mnemonicParsing="false" onMouseClicked="#btn_disconnect" prefHeight="25.0" prefWidth="85.0" style="-fx-background-color: ff6060;" text="Deconnecter" AnchorPane.leftAnchor="185.0" AnchorPane.topAnchor="94.0">
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor></Button>
+            <Text layoutX="67.0" layoutY="135.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Connecter ou Deconnecter une telécommande en appuyant sur n'importe quel." wrappingWidth="378.92578125" AnchorPane.leftAnchor="67.0" AnchorPane.topAnchor="122.0" />
+            <Text layoutX="45.0" layoutY="183.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Nombre de télécommandes enregistrées :" wrappingWidth="337.92578125" AnchorPane.leftAnchor="45.0" AnchorPane.topAnchor="163.576171875">
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </Text>
+            <Button fx:id="reopen_session" layoutX="214.0" layoutY="212.0" mnemonicParsing="false" onAction="#reopen_session" onMouseClicked="#reopen_session" prefHeight="25.0" prefWidth="85.0" style="-fx-background-color: dbfcfb;" text="Ok" AnchorPane.leftAnchor="214.0" AnchorPane.topAnchor="212.0">
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor></Button>
+            <Text layoutX="140.0" layoutY="113.0" strokeType="OUTSIDE" strokeWidth="0.0" text="ou" textAlignment="CENTER" wrappingWidth="28.92578125">
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </Text>
+            <Text layoutX="46.0" layoutY="307.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Valider la session" wrappingWidth="155.92578125" AnchorPane.leftAnchor="46.0" AnchorPane.topAnchor="287.576171875">
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </Text>
+            <TextField fx:id="tf_mac_telec" layoutX="387.0" layoutY="164.0" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" minHeight="-Infinity" prefHeight="25.0" prefWidth="91.0" AnchorPane.topAnchor="164.0" />
+            <Button fx:id="close_session" layoutX="214.0" layoutY="287.0" mnemonicParsing="false" onAction="#close_session" onMouseClicked="#close_session" prefHeight="25.0" prefWidth="85.0" style="-fx-background-color: adff2f;" text="Ok" AnchorPane.leftAnchor="214.0" AnchorPane.topAnchor="287.0">
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor></Button>
+            <Button fx:id="btn_connect" layoutX="45.0" layoutY="94.0" mnemonicParsing="false" onMouseClicked="#btn_connect" prefHeight="25.0" prefWidth="85.0" style="-fx-background-color: afff60;" text="Connecter" AnchorPane.leftAnchor="45.0" AnchorPane.topAnchor="94.0">
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </Button>
+            <ImageView fitHeight="17.0" fitWidth="19.0" layoutX="45.0" layoutY="243.0" pickOnBounds="true" preserveRatio="true" AnchorPane.leftAnchor="45.0" AnchorPane.topAnchor="243.0">
+               <image>
+                  <Image url="@../../image/detail.png" />
+               </image>
+            </ImageView>
+            <Button fx:id="btn_suivant" layoutX="456.0" layoutY="338.0" mnemonicParsing="false" onAction="#btn_suivant" onMouseClicked="#btn_suivant" prefHeight="25.0" prefWidth="117.0" style="-fx-background-color: adff2f;" text="Suivant">
+               <font>
+                  <Font name="Gill Sans MT" size="18.0" />
+               </font>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </Button>
+            <Text layoutX="45.0" layoutY="232.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Rouvrir la session" wrappingWidth="157.92578125" AnchorPane.leftAnchor="45.0" AnchorPane.topAnchor="212.576171875">
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </Text>
+            <ImageView fitHeight="17.0" fitWidth="19.0" layoutX="45.0" layoutY="321.0" pickOnBounds="true" preserveRatio="true" AnchorPane.leftAnchor="45.0" AnchorPane.topAnchor="321.0">
+               <image>
+                  <Image url="@../../image/detail.png" />
+               </image>
+            </ImageView>
+            <Text layoutX="67.0" layoutY="326.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Aucune télécommande ne peut être ajoutée ou supprimée. Il faut valider pour continuer." wrappingWidth="378.92578125" AnchorPane.leftAnchor="67.0" AnchorPane.topAnchor="313.0" />
+            <ImageView fitHeight="17.0" fitWidth="19.0" layoutX="45.0" layoutY="130.0" pickOnBounds="true" preserveRatio="true" AnchorPane.leftAnchor="45.0" AnchorPane.topAnchor="130.0">
+               <image>
+                  <Image url="@../../image/detail.png" />
+               </image>
+            </ImageView>
+            <Text layoutX="67.0" layoutY="256.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Déconnecter toutes les télécommandes puis commencer la connexion." wrappingWidth="378.92578125" AnchorPane.leftAnchor="67.0" AnchorPane.topAnchor="243.0" />
+         </children>
+      </Group>
+      <Text layoutX="83.0" layoutY="44.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Configuration des télécommandes de la session de vote" textAlignment="CENTER" wrappingWidth="427.7177734375" AnchorPane.leftAnchor="83.0" AnchorPane.topAnchor="20.259765625">
+         <font>
+            <Font size="22.0" />
+         </font>
+      </Text>
+      <Text layoutX="45.0" layoutY="140.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Choix du port série">
+         <font>
+            <Font size="20.0" />
+         </font>
+      </Text>
+      <ComboBox fx:id="choix_port" layoutX="45.0" layoutY="145.0" onAction="#select_port" prefHeight="25.0" prefWidth="306.0" promptText="Choix du port de communication" />
+      <Button layoutX="364.0" layoutY="145.0" mnemonicParsing="false" onAction="#actualiser_port" prefHeight="25.0" prefWidth="74.0" style="-fx-background-color: dbfcfb;" text="Actualiser">
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </Button>
+      <Button layoutX="449.0" layoutY="145.0" mnemonicParsing="false" onAction="#disconnect" style="-fx-background-color: ff6060;" text="Deconnecter">
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </Button>
+      <Text layoutX="45.0" layoutY="207.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Télécommandes">
+         <font>
+            <Font size="20.0" />
+         </font>
+      </Text>
+      <ImageView fitHeight="32.0" fitWidth="39.0" layoutX="25.0" layoutY="25.0" onMouseClicked="#ClicBoutonRetour" pickOnBounds="true" preserveRatio="true">
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+         <image>
+            <Image url="@../../image/retour.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="43.0" fitWidth="46.0" layoutX="535.0" layoutY="19.0" onMousePressed="#btn_exit" pickOnBounds="true" preserveRatio="true">
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+         <image>
+            <Image url="@../../image/on_off.png" />
+         </image>
+      </ImageView>
+   </children>
+</AnchorPane>

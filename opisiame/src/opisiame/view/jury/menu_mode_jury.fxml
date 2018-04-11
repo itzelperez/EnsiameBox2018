@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.effect.*?>
+<?import javafx.scene.text.*?>
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane id="AnchorPane" fx:id="content" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="opisiame.controller.gestion_jury.Menu_Mode_Jury">
+   <children>
+      <Text layoutX="163.0" layoutY="47.9267578125" strokeType="OUTSIDE" strokeWidth="0.0" text="Menu Mode Jury" AnchorPane.leftAnchor="165.0" AnchorPane.rightAnchor="160.0" AnchorPane.topAnchor="10.0" GridPane.columnIndex="1" GridPane.columnSpan="2" GridPane.halignment="CENTER" GridPane.valignment="CENTER">
+         <font>
+            <Font size="37.0" />
+         </font>
+      </Text>
+      <ImageView fitHeight="74.0" fitWidth="53.0" layoutX="516.0" layoutY="7.0" onMousePressed="#btn_exit" pickOnBounds="true" preserveRatio="true" AnchorPane.rightAnchor="30.0" AnchorPane.topAnchor="7.0" GridPane.columnIndex="3" GridPane.halignment="CENTER" GridPane.valignment="CENTER">
+         <image>
+            <Image url="@../../image/on_off.png" />
+         </image>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </ImageView>
+      <ImageView fitHeight="137.0" fitWidth="357.0" layoutX="133.0" layoutY="235.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="1" GridPane.columnSpan="2" GridPane.halignment="CENTER" GridPane.rowIndex="3" GridPane.valignment="CENTER">
+         <image>
+            <Image url="@../../image/opisiame_logo.png" />
+         </image>
+      </ImageView>
+      <Button cancelButton="false" defaultButton="false" layoutX="99.0" layoutY="145.0" mnemonicParsing="false" onMousePressed="#btn_vote" prefHeight="72.0" prefWidth="145.0" style="-fx-background-color: adff2f; -fx-background-radius: 202020;" text="Démarrer Vote" textAlignment="CENTER" underline="false" wrapText="true" AnchorPane.leftAnchor="100.0" AnchorPane.topAnchor="135.0">
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+         <font>
+            <Font name="System Bold" size="14.0" fx:id="x11" />
+         </font>
+      </Button>
+      <Button cancelButton="false" defaultButton="false" layoutX="344.0" layoutY="145.0" mnemonicParsing="false" onMousePressed="#ClicBoutonEleves" prefHeight="72.0" prefWidth="145.0" style="-fx-background-color: #f59ff5; -fx-background-radius: 202020;" text="Etudiants" textAlignment="CENTER" underline="false" wrapText="true" AnchorPane.rightAnchor="100.0" AnchorPane.topAnchor="135.0">
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+         <font>
+            <Font name="System Bold" size="14.0" fx:id="x111" />
+         </font>
+      </Button>
+      <ImageView fitHeight="40.0" fitWidth="40.0" layoutX="14.0" layoutY="13.0" onMouseClicked="#ClicBoutonRetour" pickOnBounds="true" preserveRatio="true">
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+         <image>
+            <Image url="@../../image/retour.png" />
+         </image>
+      </ImageView>
+   </children>
+</AnchorPane>

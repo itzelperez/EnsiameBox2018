@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.chart.*?>
+<?import javafx.scene.text.*?>
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane id="AnchorPane" prefHeight="542.0" prefWidth="691.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="opisiame.controller.gestion_jury.ResultatsVoteController">
+   <children>
+      <Button layoutX="132.0" layoutY="474.0" mnemonicParsing="false" onAction="#excel_export" prefHeight="33.0" prefWidth="173.0" style="-fx-background-color: #74d66d;" text="Export to Excel">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Button>
+      <Button layoutX="381.0" layoutY="474.0" mnemonicParsing="false" onAction="#pdf_export" prefHeight="40.0" prefWidth="173.0" style="-fx-background-color: #4286f4;" text="Export to PDF">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Button>
+      <PieChart fx:id="ResultsVote" layoutX="22.0" layoutY="3.0" prefHeight="491.0" prefWidth="650.0" title="Resultats" AnchorPane.bottomAnchor="48.0" AnchorPane.leftAnchor="22.0" AnchorPane.rightAnchor="19.0" AnchorPane.topAnchor="3.0" />
+   </children>
+</AnchorPane>

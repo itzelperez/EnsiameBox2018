@@ -170,13 +170,12 @@ public void getSelectedEleve() {
     public void Attendez() throws IOException {
         //Retour sur la fenetre d'identification
         Stage stage = (Stage) content.getScene().getWindow();
-        Parent root = FXMLLoader.load(getClass().getResource("/opisiame/view/utilisateur/interface_authentification.fxml"));
-        Scene scene = new Scene(root);
-        stage.setScene(scene);
-        stage.setResizable(false);
-        stage.centerOnScreen();
-        stage.show();
-        session.Session.Logout();
+            Parent root = FXMLLoader.load(getClass().getResource("/opisiame/view/jury/resultats.fxml"));
+            Scene scene = new Scene(root);
+            stage.setScene(scene);
+            stage.setResizable(true);
+            stage.centerOnScreen();
+            stage.show();
     }
     
         @FXML

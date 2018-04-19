@@ -302,14 +302,33 @@ public class ResultatsVoteController implements Initializable {
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
-         ObservableList<PieChart.Data> pieChartData =
-            FXCollections.observableArrayList(
-            new PieChart.Data("Oui", 60),
-            new PieChart.Data("Non", 25),
-            new PieChart.Data("Non Concerné", 15),
-            new PieChart.Data("Non", 25));
- 
+    ObservableList<PieChart.Data> pieChartData = FXCollections.observableArrayList(
+      new PieChart.Data("Non concerné", 13),
+      new PieChart.Data("Blanc",    25),
+      new PieChart.Data("Oui",      10),
+      new PieChart.Data("Non",      22)
+    );
+
+     ResultsVote.setData(pieChartData);
+     ResultsVote.setLegendVisible(false);
+       
+      applyCustomColorSequence(
+      pieChartData, 
+      "blue", 
+      "white",
+      "green", 
+      "red"
+    );
+  }
+
+  private void applyCustomColorSequence(ObservableList<PieChart.Data> pieChartData, String... pieColors) {
+    int i = 0;
+    for (PieChart.Data data : pieChartData) {
+      data.getNode().setStyle("-fx-pie-color: " + pieColors[i % pieColors.length] + ";");
+      i++;
     }
-    
+  }
 }
+    
+
 

@@ -149,15 +149,24 @@ public class Lancer_questionController implements Initializable {
             print_image(q.getImg_blob());
             print_reponse(q.getReponses());
             int timer = get_quest_timer();
+            System.out.println("opisiame.controller.gestion_quiz.Lancer_questionController.print_question() UM");
             listen_remote();
+            System.out.println("opisiame.controller.gestion_quiz.Lancer_questionController.print_question() DOIS");
             if (timer > 0) {
+                System.out.println("opisiame.controller.gestion_quiz.Lancer_questionController.print_question() TRES");
                 run_timer(timer);
+                System.out.println("opisiame.controller.gestion_quiz.Lancer_questionController.print_question() QUATRO");
                 btn_next_question.setDisable(true);
+                System.out.println("opisiame.controller.gestion_quiz.Lancer_questionController.print_question() CINCO");
             } else {
+                System.out.println("opisiame.controller.gestion_quiz.Lancer_questionController.print_question() SEIS");
                 btn_next_question.setDisable(false);
+                System.out.println("opisiame.controller.gestion_quiz.Lancer_questionController.print_question() SETE");
                 if (current_question_no >= questions.size() - 1) {
+                    System.out.println("opisiame.controller.gestion_quiz.Lancer_questionController.print_question() OITO");
                     btn_next_question.setText("Terminer");
                 } else {
+                    System.out.println("opisiame.controller.gestion_quiz.Lancer_questionController.print_question() NOVE");
                     btn_next_question.setText(" >> ");
                 }
             }
@@ -167,6 +176,7 @@ public class Lancer_questionController implements Initializable {
     public void switch_off_remotes(String led_id) {
         try {
             RemoteAtRequest request_led_off = new RemoteAtRequest(XBeeAddress64.BROADCAST, led_id, new int[]{XBeePin.Capability.DIGITAL_OUTPUT_LOW.getValue()});
+            System.out.println("jesus " + request_led_off);
             xbee.sendAsynchronous(request_led_off);
             try {
                 Thread.sleep(1000);
@@ -204,6 +214,7 @@ public class Lancer_questionController implements Initializable {
             listenRemote.setRep_id_b(current_question.getReponses().get(1).getId());
             listenRemote.setRep_id_c(current_question.getReponses().get(2).getId());
             listenRemote.setRep_id_d(current_question.getReponses().get(3).getId());
+            System.out.println("opisiame.controller.gestion_quiz.Lancer_questionController.listen_remote() ID A " + current_question.getReponses().get(0).getId());
             listenRemote.start();
         }
     }

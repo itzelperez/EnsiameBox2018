@@ -65,11 +65,36 @@ public class Liste_eleves_juryController  implements Initializable {
     @FXML
     private Button SelectAll; 
     
+    private Parent root;
+    
+    private Stage stage;
+    
+    private Scene scene;
+    
+    public void setRoot(Parent root){
+        this.root = root;
+    }
+    
+    public void setStage(Stage stage){
+        this.stage = stage;
+    }
+    public void setScene(Scene scene){
+        this.scene = scene;
+    }
+    
+    
     //@FXML
     //private Button commencer_vote; 
 
    private List<Integer> estudents_evaluate = new ArrayList<>();
     private String Cont_recherche = null;
+    
+    private Vote_Controller vote_controller;
+    
+    public void setVote_Controller(Vote_Controller vote_controller){
+        System.out.println("ENDERECO SET VOTE " +this);
+        this.vote_controller = vote_controller;
+    }
 
     /*
     Fonction qui récupère la liste des élèves
@@ -173,13 +198,13 @@ public class Liste_eleves_juryController  implements Initializable {
                         Integer id = Tableau.getFocusModel().getFocusedItem().getId();
                         estudents_evaluate.add(id);
                         //estudents_evaluate.addAll()
-                        System.out.println("Elegiste un batillo" + estudents_evaluate.size());
+                        System.out.println("Students" + estudents_evaluate.size());
                     }
                     
                     if(!check.isSelected()){
                     Integer id = Tableau.getFocusModel().getFocusedItem().getId();
                     estudents_evaluate.remove(id);
-                    System.out.println("DesElegiste un batillo" + estudents_evaluate.size());
+                    System.out.println("Students" + estudents_evaluate.size());
                 }
                       
                 }
@@ -219,21 +244,22 @@ public class Liste_eleves_juryController  implements Initializable {
     @FXML
     public void ClicBoutonSuivant() throws IOException {   
         try {
-            FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/opisiame/view/jury/vote.fxml"));
-            Parent root = (Parent) fxmlLoader.load();
-            Vote_Controller vote_controller = fxmlLoader.<Vote_Controller>getController();
+            //FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/opisiame/view/jury/vote.fxml"));
+            //Parent root = (Parent) fxmlLoader.load();
+            //Vote_Controller vote_controller = fxmlLoader.<Vote_Controller>getController();
+            System.out.println("ENDERECO LISTE " + this);
             vote_controller.setEleve_id(estudents_evaluate);
             vote_controller.getSelectedEleve();
-            Stage stage = new Stage();
-            stage.initModality(Modality.APPLICATION_MODAL);
-            stage.setTitle("Vote");
-            Scene scene = new Scene(root);
-            stage.setScene(scene);
-            stage.centerOnScreen();
-            stage.show();
+            Stage stagep = new Stage();
+            stagep.initModality(Modality.APPLICATION_MODAL);
+            stagep.setTitle("Vote");
+            Scene scenep = new Scene(root);
+            stagep.setScene(scenep);
+            stagep.centerOnScreen();
+            stagep.show();
 
 
-        } catch (IOException ex) {
+        } catch (Exception ex) {
             Logger.getLogger(Liste_eleves_adminController.class.getName()).log(Level.SEVERE, null, ex);
         }
     }

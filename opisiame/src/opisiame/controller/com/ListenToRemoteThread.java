@@ -21,6 +21,7 @@ import java.util.logging.Level;
 import opisiame.controller.gestion_eleve.Link_eleve_teleController;
 import opisiame.dao.Reponse_participation_dao;
 import opisiame.model.Eleve;
+import opisiame.model.Vote;
 
 /**
  *
@@ -35,6 +36,10 @@ public class ListenToRemoteThread extends Thread {
     String num_port;
 
     List<Eleve> eleves;
+    
+    List<Vote> Vote;
+    
+    //List<Vote> votes;
 
     private Boolean running = true;
 
@@ -48,6 +53,18 @@ public class ListenToRemoteThread extends Thread {
     String led_red = "D4";
 
     Reponse_participation_dao reponse_participation_dao = new Reponse_participation_dao();
+   
+
+    public ListenToRemoteThread(XBee xbee, List<Vote> vote) {
+        this.xbee = xbee;
+        this.Vote = vote;
+   
+        running = true;
+        remotes_responded = new ArrayList<>();
+        remotes_responded.clear();
+    }
+    
+
 
     public void setRep_id_a(int rep_id_a) {
         this.rep_id_a = rep_id_a;
@@ -65,10 +82,11 @@ public class ListenToRemoteThread extends Thread {
         this.rep_id_d = rep_id_d;
     }
 
-    public ListenToRemoteThread(XBee xBee, String num_port, List<Eleve> Eleves) {
+    public ListenToRemoteThread(XBee xBee, String num_port, List<Eleve> Eleves ){
         this.num_port = num_port;
         this.xbee = xBee;
         this.eleves = Eleves;
+        //this.votes = Votes;
         running = true;
         remotes_responded = new ArrayList<>();
         remotes_responded.clear();
@@ -88,6 +106,7 @@ public class ListenToRemoteThread extends Thread {
         while (running) {
             try {
                 while (true) {
+                    System.out.println("opisiame.controller.com.ListenToRemoteThread.run() "+ xbee);
                     xbee.clearResponseQueue();
                     XBeeResponse response = xbee.getResponse();
                     if (response.isError()) {
@@ -157,6 +176,15 @@ public class ListenToRemoteThread extends Thread {
                     }
                 }
             }
+           
+           /* 
+            for (int k = 0; k < votes.size(); k++) {
+                if (votes.get(k).getAdresse_mac_tel() != null) {
+                    if (votes.get(k).getAdresse_mac_tel().equals(adr_max)) {
+                        return votes.get(k).getPart_id();
+                    }
+                }
+            }*/
             return null;
         }
 
@@ -168,10 +196,12 @@ public class ListenToRemoteThread extends Thread {
          */
         @Override
         public void run() {
+            System.out.println("opisiame.controller.com.ListenToRemoteThread.ProcessResponse.run() when are you run");
             if (response.getApiId() == ApiId.RX_64_IO_RESPONSE) {
                 RxResponseIoSample ioSample = (RxResponseIoSample) response;
                 XBeeAddress64 address_remote = (XBeeAddress64) ioSample.getSourceAddress();
                 Integer part_id = get_part_id(address_remote.toString());
+                System.out.println("GOT HERE " + part_id);
                 if (part_id != null) {
                     this.adress_mac = address_remote;
                     if (!test_if_is_in_list(address_remote.toString())) {
@@ -183,25 +213,29 @@ public class ListenToRemoteThread extends Thread {
                                         switch_off_led(led_green, address_remote);
                                         switch_on_led(led_yellow, address_remote);
                                         remotes_responded.add(address_remote);
+                                        System.out.println("Clicked B");
                                         
                                     }
-                                    if (!sample.isD1On()) { // bouton gris  => c
+                                    if (!sample.isD1On()) { // bouton blanc  => c
                                         reponse_participation_dao.insert_rep_participation(rep_id_c, part_id);
                                         switch_off_led(led_green, address_remote);
                                         switch_on_led(led_yellow, address_remote);
                                         remotes_responded.add(address_remote);
+                                        System.out.println("Clicked C");
                                     }
                                     if (!sample.isD0On()) { // bouton vert => a
                                         reponse_participation_dao.insert_rep_participation(rep_id_a, part_id);
                                         switch_off_led(led_green, address_remote);
                                         switch_on_led(led_yellow, address_remote);
                                         remotes_responded.add(address_remote);
+                                        System.out.println("Clicked A");
                                     }
                                     if (!sample.isD3On()) { // bouton bleu  => d
                                         reponse_participation_dao.insert_rep_participation(rep_id_d, part_id);
                                         switch_off_led(led_green, address_remote);
                                         switch_on_led(led_yellow, address_remote);
                                         remotes_responded.add(address_remote);
+                                        System.out.println("Clicked D");
                                     }
                                 }
                             }

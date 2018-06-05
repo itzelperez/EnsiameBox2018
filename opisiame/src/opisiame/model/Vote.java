@@ -5,6 +5,7 @@
  */
 package opisiame.model;
 
+import java.util.ArrayList;
 import javafx.beans.property.*;
 
 /**
@@ -26,6 +27,7 @@ public class Vote {
     private StringProperty Adresse_mac_tel = new SimpleStringProperty();    
     private StringProperty str_Adresse_mac_tel = new SimpleStringProperty();
     private IntegerProperty Voters = new SimpleIntegerProperty();
+    private ArrayList<Reponse> reponses;
     private Integer part_id;
 
     public Integer getPart_id() {
@@ -64,6 +66,13 @@ public class Vote {
         this.str_Adresse_mac_tel.set(str_Adresse_mac_tel);
     }
     
+    public ArrayList<Reponse> getReponses() {
+        return reponses;
+    }
+
+    public void setReponses(ArrayList<Reponse> reponses) {
+        this.reponses = reponses;
+    }
 
     // Pour retourner les attributs
     public Integer getId() {

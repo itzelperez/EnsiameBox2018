@@ -18,7 +18,7 @@ import opisiame.database.Connection_db;
 public class Reponse_participation_dao {
 
     public void insert_rep_participation(Integer Rep_id, Integer Participation_id) {
-        String SQL = "INSERT INTO reponse_participant_quiz (Rep_id, Participation_id) VALUES (?,?)";
+        String SQL = "INSERT INTO reponse_participant_quiz (Rep_id, PRarticipation_id) VALUES (?,?)";
         try {
             Connection connection = Connection_db.getDatabase();
             PreparedStatement ps = connection.prepareStatement(SQL);

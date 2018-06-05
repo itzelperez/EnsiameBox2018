@@ -14,6 +14,8 @@
     <jar href="lib\commons-logging-1.2.jar" size="61829" download="eager" />
     <jar href="lib\curvesapi-1.04.jar" size="98365" download="eager" />
     <jar href="lib\itext-2.1.7.jar" size="1130070" download="eager" />
+    <jar href="lib\jcommon-1.0.23.jar" size="330246" download="eager" />
+    <jar href="lib\jfreechart-1.0.19.jar" size="1570157" download="eager" />
     <jar href="lib\junit-4.12.jar" size="314932" download="eager" />
     <jar href="lib\log4j-1.2.17.jar" size="489884" download="eager" />
     <jar href="lib\log4j.jar" size="367444" download="eager" />
@@ -25,7 +27,7 @@
     <jar href="lib\poi-ooxml-schemas-3.15.jar" size="5859007" download="eager" />
     <jar href="lib\poi-scratchpad-3.15.jar" size="1324935" download="eager" />
     <jar href="lib\xmlbeans-2.6.0.jar" size="2730866" download="eager" />
-    <jar href="opisiame.jar" size="1157880" download="eager" />
+    <jar href="opisiame.jar" size="1189946" download="eager" />
   </resources>
   <applet-desc  width="800" height="600" main-class="com.javafx.main.NoJavaFXFallback"  name="opisiame" >
     <param name="requiredFXVersion" value="8.0+"/>

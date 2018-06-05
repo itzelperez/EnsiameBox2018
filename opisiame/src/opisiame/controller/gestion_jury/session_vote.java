@@ -74,7 +74,9 @@ public class session_vote  implements Initializable{
     private Button btn_connect;
             
     @FXML
-    private Button btn_disconnect;        
+    private Button btn_disconnect;  
+    
+    private Parent root;
     
     @FXML
     private Button reopen_session;     
@@ -87,7 +89,9 @@ public class session_vote  implements Initializable{
     
     @FXML
     private ComboBox choix_port;
-
+    
+    private Vote_Controller vote_controller = new Vote_Controller();
+    
     XBeeResponse response;
     
     List<XBeeAddress64> remotes_responded;
@@ -213,8 +217,17 @@ public void initialize(URL url, ResourceBundle rb) {
         else{
             btn_suivant.setDisable(false);
             Stage stage = (Stage) content.getScene().getWindow();
-            Parent root = FXMLLoader.load(getClass().getResource("/opisiame/view/jury/liste_eleves_jury.fxml"));
-            Scene scene = new Scene(root);
+            
+        FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/opisiame/view/jury/liste_eleves_jury.fxml"));
+        Parent rootp = (Parent) fxmlLoader.load();
+            //Parent root = FXMLLoader.load(getClass().getResource("/opisiame/view/jury/liste_eleves_jury.fxml"));
+            Liste_eleves_juryController liste_eleves_jury_controller = fxmlLoader.<Liste_eleves_juryController>getController();
+            liste_eleves_jury_controller.setVote_Controller(vote_controller);
+            liste_eleves_jury_controller.setRoot(root);
+            liste_eleves_jury_controller.setStage(stage);
+            Scene scene = new Scene(rootp);
+            
+            liste_eleves_jury_controller.setScene(scene);
             stage.setScene(scene);
             stage.setResizable(true);
             stage.centerOnScreen();
@@ -343,27 +356,17 @@ public void initialize(URL url, ResourceBundle rb) {
     }
     
     
-    public Boolean test_if_tel_exists(String adress, ArrayList adresses) {
-        if (adresses.size() > 0){
-            adresses.add(adress);
-            return true;
-        } else {
-                return false;
-        }
-    }
-    
     
     public void getVoters() throws IOException{
     FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/opisiame/view/jury/vote.fxml"));
-    Parent root = (Parent) fxmlLoader.load();    
-    Vote_Controller vote_controller = fxmlLoader.<Vote_Controller>getController();
-    vote_controller.setVoters(participants);
+    root = (Parent) fxmlLoader.load();
+    vote_controller = fxmlLoader.<Vote_Controller>getController();
+        System.out.println("opisiame.controller.gestion_jury.session_vote.getVoters() " + xbee);
+    vote_controller.setXBee(xbee);
+    System.out.println("los participantes primero" + participants);
     }
     
-    /*public Integer insert_new_participation() {
-    Integer part_id = participation_vote_dao.insert_participation( vote_id, date_participation);
-    return part_id;
-    }*/
+
     
         class Thread_wait_for_cmd extends Thread {
 
@@ -469,6 +472,7 @@ public void initialize(URL url, ResourceBundle rb) {
                             tf_mac_telec.setText("" + participants);
                             System.out.println(adresses);
                             getVoters();
+                            vote_controller.setVoters(participants);
                         }
                     }
                 }

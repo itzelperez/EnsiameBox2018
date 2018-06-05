@@ -345,6 +345,7 @@ public class Link_eleve_teleController implements Initializable {
     @FXML
     public void select_port() {
         num_port = choix_port.getSelectionModel().getSelectedItem().toString();
+        System.out.println("opisiame.controller.gestion_eleve.Link_eleve_teleController.select_port() " + choix_port);
         System.out.println("choix port : " + num_port);
         try {
             xbee.open(num_port, 9600);
@@ -406,6 +407,7 @@ public class Link_eleve_teleController implements Initializable {
     public void ClicBoutonLancerQuiz() throws IOException {
         if (num_port != null) {
             try {
+                System.out.println("opisiame.controller.gestion_eleve.Link_eleve_teleController.ClicBoutonLancerQuiz() CLOSOU ");
                 xbee.close();
                 try {
                     Thread.sleep(1000);

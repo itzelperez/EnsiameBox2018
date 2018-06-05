@@ -198,14 +198,17 @@ public class XBee implements IXBee {
 	
 	public void sendRequest(XBeeRequest request) throws IOException {
 		if (this.type != null) {
+                    System.out.println("com.rapplogic.xbee.api.XBee.sendRequest()1");
 			// TODO use interface to mark series type
 			if (type == RadioType.SERIES1 && request.getClass().getPackage().getName().indexOf("api.zigbee") > -1) {
+                            System.out.println("com.rapplogic.xbee.api.XBee.sendRequest()2");
 				throw new IllegalArgumentException("You are connected to a Series 1 radio but attempting to send Series 2 requests");
 			} else if (type == RadioType.SERIES2 && request.getClass().getPackage().getName().indexOf("api.wpan") > -1) {
+                            System.out.println("com.rapplogic.xbee.api.XBee.sendRequest()3");
 				throw new IllegalArgumentException("You are connected to a Series 2 radio but attempting to send Series 1 requests");
 			}
 		}
-		
+		          System.out.println("com.rapplogic.xbee.api.XBee.sendRequest()4");
 		log.info("Sending request to XBee: " + request);
 		this.sendPacket(request.getXBeePacket());
 	}
@@ -238,6 +241,7 @@ public class XBee implements IXBee {
 		// TODO call request listener with byte array
 		
 		if (!this.isConnected()) {
+                    System.out.println("com.rapplogic.xbee.api.XBee.sendPacket()1");
 			throw new RuntimeException("XBee is not connected");
 		}
 		
@@ -265,9 +269,12 @@ public class XBee implements IXBee {
 	public void sendAsynchronous(XBeeRequest request) throws XBeeException {
 
 		try {
-			this.sendRequest(request);			
+                    System.out.println("com.rapplogic.xbee.api.XBee.sendAsynchronous()");
+			this.sendRequest(request);
+                        System.out.println("com.rapplogic.xbee.api.XBee.sendAsynchronous()");
 		} catch (Exception e) {
-			throw new XBeeException(e);
+                    e.printStackTrace();
+			//throw new XBeeException(e);
 		}
 	}
 

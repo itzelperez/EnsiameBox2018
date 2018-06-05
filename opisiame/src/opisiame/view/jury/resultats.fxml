@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.scene.shape.*?>
 <?import javafx.scene.chart.*?>
 <?import javafx.scene.text.*?>
 <?import java.lang.*?>
@@ -8,18 +9,38 @@
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 
-<AnchorPane id="AnchorPane" prefHeight="542.0" prefWidth="691.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="opisiame.controller.gestion_jury.ResultatsVoteController">
+<AnchorPane id="AnchorPane" prefHeight="571.0" prefWidth="707.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="opisiame.controller.gestion_jury.ResultatsVoteController">
    <children>
-      <Button layoutX="132.0" layoutY="474.0" mnemonicParsing="false" onAction="#excel_export" prefHeight="33.0" prefWidth="173.0" style="-fx-background-color: #74d66d;" text="Export to Excel">
+      <Button fx:id="excel" layoutX="152.0" layoutY="518.0" mnemonicParsing="false" onAction="#excel_export" prefHeight="33.0" prefWidth="173.0" style="-fx-background-color: #74d66d;" text="Exporter vers Excel">
          <font>
             <Font size="18.0" />
          </font>
       </Button>
-      <Button layoutX="381.0" layoutY="474.0" mnemonicParsing="false" onAction="#pdf_export" prefHeight="40.0" prefWidth="173.0" style="-fx-background-color: #4286f4;" text="Export to PDF">
+      <Button layoutX="430.0" layoutY="518.0" mnemonicParsing="false" onAction="#pdf_export" prefHeight="40.0" prefWidth="173.0" style="-fx-background-color: #4286f4;" text="Exporter vers PDF">
          <font>
             <Font size="18.0" />
          </font>
       </Button>
-      <PieChart fx:id="ResultsVote" layoutX="22.0" layoutY="3.0" prefHeight="491.0" prefWidth="650.0" title="Resultats" AnchorPane.bottomAnchor="48.0" AnchorPane.leftAnchor="22.0" AnchorPane.rightAnchor="19.0" AnchorPane.topAnchor="3.0" />
+      <PieChart fx:id="ResultsVote" layoutX="63.0" prefHeight="441.0" prefWidth="616.0" title="Resultats" AnchorPane.bottomAnchor="130.0" AnchorPane.leftAnchor="63.0" AnchorPane.rightAnchor="28.0" AnchorPane.topAnchor="0.0" />
+      <Group layoutX="85.0" layoutY="58.0">
+         <children>
+            <Text layoutX="334.0" layoutY="445.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Blanc" />
+            <Circle fill="#2abc36" layoutX="103.0" layoutY="419.0" radius="13.0" stroke="TRANSPARENT" strokeType="INSIDE" />
+            <Text layoutX="434.0" layoutY="445.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Non Concerné" />
+            <Text layoutX="215.0" layoutY="445.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Non" />
+            <Circle fill="WHITE" layoutX="348.0" layoutY="419.0" radius="13.0" stroke="#00000052" strokeType="INSIDE" />
+            <Circle fill="#e81414" layoutX="226.0" layoutY="419.0" radius="13.0" stroke="TRANSPARENT" strokeType="INSIDE" />
+            <Circle fill="#0681b5" layoutX="472.0" layoutY="419.0" radius="13.0" stroke="TRANSPARENT" strokeType="INSIDE" />
+            <Text layoutX="94.0" layoutY="445.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Oui" />
+         </children>
+      </Group>
+      <Group layoutY="24.0">
+         <children>
+            <Label fx:id="blanco" layoutX="431.0" layoutY="417.0" text="Label" />
+            <Label fx:id="yes" layoutX="189.0" layoutY="417.0" text="Label" />
+            <Label fx:id="nein" layoutX="307.0" layoutY="417.0" text="Label" />
+         </children>
+      </Group>
+      <Label fx:id="nc" layoutX="554.0" layoutY="441.0" text="Label" />
    </children>
 </AnchorPane>

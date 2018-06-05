@@ -50,6 +50,7 @@ public class InputStreamThread implements Runnable {
 	private XBeeConfiguration conf;
 	
 	public XBeeConnection getXBeeConnection() {
+            System.out.println("com.rapplogic.xbee.api.InputStreamThread.getXBeeConnection() " +connection);
 		return connection;
 	}
 

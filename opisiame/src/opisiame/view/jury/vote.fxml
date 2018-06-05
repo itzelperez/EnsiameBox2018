@@ -1,5 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.scene.paint.*?>
+<?import javafx.scene.shape.*?>
 <?import javafx.geometry.*?>
 <?import javafx.scene.image.*?>
 <?import javafx.scene.chart.*?>
@@ -10,9 +12,9 @@
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 
-<AnchorPane id="AnchorPane" fx:id="content" prefHeight="613.0" prefWidth="617.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="opisiame.controller.gestion_jury.Vote_Controller">
+<AnchorPane id="AnchorPane" fx:id="content" prefHeight="626.0" prefWidth="627.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="opisiame.controller.gestion_jury.Vote_Controller">
    <children>
-      <Text layoutX="278.0" layoutY="44.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Vote">
+      <Text layoutX="285.0" layoutY="44.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Vote">
          <font>
             <Font size="28.0" />
          </font>
@@ -23,13 +25,12 @@
          </font>
       </Text>
       <Text layoutX="44.0" layoutY="204.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Motif du vote" />
-      <Group layoutX="6.0" layoutY="49.0">
+      <Group layoutX="92.0" layoutY="51.0">
          <children>
-            <Text layoutX="397.0" layoutY="347.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Temps restant:" />
-            <Text layoutX="54.0" layoutY="347.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Nombre de votants:" />
-            <Text layoutX="231.0" layoutY="347.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Nombre de votes:" />
-            <Label fx:id="no_votants" layoutX="167.0" layoutY="332.0" prefHeight="22.0" prefWidth="55.0" text="Label" />
-            <Label layoutX="333.0" layoutY="330.0" prefHeight="25.0" prefWidth="55.0" text="Label" />
+            <Text layoutX="54.0" layoutY="336.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Nombre de votants:" />
+            <Label fx:id="no_votants" layoutX="166.0" layoutY="321.0" prefHeight="22.0" prefWidth="55.0" text="Label" />
+            <Label fx:id="no_votes" layoutX="333.0" layoutY="319.0" prefHeight="25.0" prefWidth="55.0" text="0" />
+            <Text layoutX="229.0" layoutY="334.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Nombre de votes:" />
          </children>
       </Group>
       <TableView fx:id="Tableau" layoutX="36.0" layoutY="78.0" prefHeight="111.0" prefWidth="553.0" tableMenuButtonVisible="true">
@@ -44,9 +45,8 @@
             <TableColumn fx:id="Annee" prefWidth="56.0" text="Année" />
          </columns>
       </TableView>
-      <TextField layoutX="36.0" layoutY="208.0" prefHeight="67.0" prefWidth="553.0" />
-      <PieChart layoutX="52.0" layoutY="409.0" prefHeight="193.0" prefWidth="514.0" title="RESULTATS" />
-      <Group layoutX="-1.0" layoutY="38.0">
+      <TextField fx:id="motifTextField" layoutX="38.0" layoutY="214.0" prefHeight="61.0" prefWidth="347.0" />
+      <Group layoutX="-12.0" layoutY="40.0">
          <children>
             <Button fx:id="Votez" layoutX="256.0" layoutY="283.0" mnemonicParsing="false" onAction="#Votez" prefHeight="37.0" prefWidth="109.0" style="-fx-background-color: #82FA58;" text="Votez">
                <font>
@@ -58,27 +58,62 @@
                   <Font size="18.0" />
                </font>
             </Button>
-            <Button fx:id="Arretez" layoutX="413.0" layoutY="283.0" mnemonicParsing="false" onAction="#Arretez" prefHeight="37.0" prefWidth="109.0" style="-fx-background-color: FA5858;" text="Arrétez" AnchorPane.rightAnchor="95.0">
+            <Button fx:id="Arretez" layoutX="413.0" layoutY="283.0" mnemonicParsing="false" onAction="#Arretez" prefHeight="37.0" prefWidth="139.0" style="-fx-background-color: FA5858;" text="Votation finie" AnchorPane.rightAnchor="95.0">
                <font>
                   <Font size="18.0" />
                </font>
             </Button>
          </children>
       </Group>
-      <Button layoutX="225.0" layoutY="282.0" mnemonicParsing="false" onAction="#btn_valider" text="Valider" />
-      <Text layoutX="36.0" layoutY="300.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Régler la minuterie" />
-      <TextField fx:id="Vote_timer" layoutX="143.0" layoutY="282.0" onKeyPressed="#timer_set_label_error_not_visible" prefHeight="25.0" prefWidth="78.0" />
-      <Label fx:id="label_error_timer" layoutX="285.0" layoutY="277.0" prefHeight="37.0" prefWidth="304.0" text="Ce champ est requis" textFill="#f80707" visible="false">
+      <Button fx:id="valider" layoutX="222.0" layoutY="283.0" mnemonicParsing="false" onAction="#btn_valider" text="Ok">
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor></Button>
+      <Text layoutX="36.0" layoutY="300.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Changer minuteur" />
+      <TextField fx:id="Vote_timer" layoutX="137.0" layoutY="283.0" onKeyPressed="#timer_set_label_error_not_visible" prefHeight="25.0" prefWidth="78.0" />
+      <Label fx:id="label_error_timer" layoutX="257.0" layoutY="283.0" prefHeight="37.0" prefWidth="304.0" text="Ce champ est requis" textFill="#f80707" visible="false">
          <font>
             <Font name="System Bold Italic" size="12.0" />
          </font>
       </Label>
-      <Label fx:id="label_number_timer_error" layoutX="286.0" layoutY="276.0" prefHeight="37.0" prefWidth="304.0" text="Valeur incorrecte (seulement des chiffres)" textFill="#f50707" visible="false">
+      <Label fx:id="label_number_timer_error" layoutX="286.0" layoutY="276.0" prefHeight="37.0" prefWidth="304.0" text="Timer doit être un chiffre!" textFill="#f50707" visible="false">
          <font>
             <Font name="System Bold Italic" size="12.0" />
          </font>
       </Label>
-      <Label text="Label" />
-      <Label layoutX="492.0" layoutY="379.0" prefHeight="25.0" prefWidth="58.0" text="Label" />
+      <Label fx:id="label_minuteur" layoutX="167.0" layoutY="449.0" prefHeight="145.0" prefWidth="334.0" text="00:30">
+         <font>
+            <Font name="Courier New" size="96.0" />
+         </font></Label>
+      <Text layoutX="275.0" layoutY="476.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Temps restant:" />
+      <Button fx:id="commencer_votation" layoutX="430.0" layoutY="283.0" mnemonicParsing="false" onAction="#btn_votation" text="Commencer votation">
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor></Button>
+      <Button layoutX="197.0" layoutY="582.0" mnemonicParsing="false" onAction="#Validate_session" text="Valider session">
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </Button>
+      <Button layoutX="336.0" layoutY="582.0" mnemonicParsing="false" onAction="#Annuler_session" text="Annuler session">
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </Button>
+      <Button fx:id="validation" layoutX="400.0" layoutY="208.0" mnemonicParsing="false" onAction="#valid_stud" prefHeight="25.0" prefWidth="85.0" text="Validation" />
+      <Button fx:id="exclusion" layoutX="451.0" layoutY="242.0" mnemonicParsing="false" onAction="#exclusion" prefHeight="25.0" prefWidth="85.0" text="Exclusion" />
+      <Button fx:id="redoublement" layoutX="493.0" layoutY="208.0" mnemonicParsing="false" onAction="#redouble" text="Redoublement" />
+      <Group layoutX="34.0" layoutY="6.0">
+         <children>
+            <Text layoutX="334.0" layoutY="445.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Blanc" />
+            <Circle fill="#07eb1d" layoutX="103.0" layoutY="419.0" radius="13.0" stroke="TRANSPARENT" strokeType="INSIDE" />
+            <Text layoutX="434.0" layoutY="445.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Non Concerné" />
+            <Text layoutX="215.0" layoutY="445.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Non" />
+            <Circle fill="WHITE" layoutX="348.0" layoutY="419.0" radius="13.0" stroke="#00000052" strokeType="INSIDE" />
+            <Circle fill="#e81414" layoutX="226.0" layoutY="419.0" radius="13.0" stroke="TRANSPARENT" strokeType="INSIDE" />
+            <Circle fill="#0681b5" layoutX="472.0" layoutY="419.0" radius="13.0" stroke="TRANSPARENT" strokeType="INSIDE" />
+            <Text layoutX="94.0" layoutY="445.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Oui" />
+         </children>
+      </Group>
    </children>
 </AnchorPane>
